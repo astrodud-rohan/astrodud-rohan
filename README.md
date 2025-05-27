@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Rohan Mukherjee</h1>
-<h3 align="center">Astrophysics | Cosmology | Cybersecurity</h3>
+<h3 align="center">Astrophysics & Cosmology | Quant Finance | Data Consultancy</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=astrodud-rohan&label=Profile%20views&color=0e75b6&style=flat" alt="astrodud-rohan" /> </p>
 
