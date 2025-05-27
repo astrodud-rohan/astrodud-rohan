@@ -7,21 +7,21 @@
 
 <p align="left"> <a href="https://twitter.com/theastrodud" target="blank"><img src="https://img.shields.io/twitter/follow/theastrodud?logo=twitter&style=for-the-badge" alt="theastrodud" /></a> </p>
 
-- 🔭 I’m currently working on **ABC**
+- 🔭 I’m currently working on **Computational Astrophysics**
 
-- 🌱 I’m currently learning **machine learning and cybersecurity.**
+- 🌱 I’m currently learning **quantitative finance analysis and data-driven consultancy.**
 
-- 👯 I’m looking to collaborate on **PQR**
+- 👯 I’m looking to collaborate on **projects related to financial markets, predictive analytics and deep sky navigation.**
 
-- 🤝 I’m looking for help with **XYZ**
+- 🤝 I’m looking for help with **curating a portfolio to showcase my skills and learning.**
 
 - 📝 I regularly write articles on [https://medium.com/@astrodud](https://medium.com/@astrodud)
 
-- 💬 Ask me about **physics, mathematics, python, astrophysics and ethical hacking.**
+- 💬 Ask me about **physics, mathematics, python, astrophysics and quant finance.**
 
-- 📫 How to reach me **rohanmukherjeemails@gmail.com**
+- 📫 Reach me: **rohanmukherjeemails@gmail.com**
 
-- ⚡ Fun fact **I think I am just a bit better at physics than coding.**
+- ⚡ Fun fact: **In order to create an apple pie from scratch, you need to invent the universe.**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
