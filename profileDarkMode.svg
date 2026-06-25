@@ -78,6 +78,6 @@ text, tspan {white-space: pre;}
 <tspan x="450" y="530" class="cc">. </tspan><tspan class="key">Twitter</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">@theastrodud</tspan>
 <tspan x="450" y="570">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
 <tspan x="450" y="590" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">{{REPOS}}</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">{{CONTRIBUTED}}</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ........... </tspan><tspan class="value" id="star_data">{{STARS}}</tspan>
-<tspan x="450" y="610" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc" id="commit_data_dots"> ................. </tspan><tspan class="value" id="commit_data">{{COMMITS}}</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ....... </t span><t span class "value" id "follower_data">{{FOLLOWERS}}</ t span>
+<tspan x="450" y="610" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc" id="commit_data_dots"> ................. </tspan><tspan class="value" id="commit_data">{{COMMITS}}</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ....... </tspan><t span class "value" id "follower_data">{{FOLLOWERS}}</tspan>
 </text>
 </svg>
