@@ -53,7 +53,7 @@ text, tspan {white-space: pre;}
 <text x="450" y="30" fill="#c9d1d9">
 <tspan x="450" y="30">astrodud-rohan</tspan> -———————————————————————————————————————————-
 <tspan x="450" y="50" class="cc">. </tspan><tspan class="key">User</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">Rohan Mukherjee</tspan>
-<tspan x="450" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ...................... </tspan><tspan class="value" id="age_data">{{UPTIME}}</tspan>
+<tspan x="450" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ...................... </tspan><tspan class="value" id="age_data">28 years, 2 months, 4 days</tspan>
 <tspan x="450" y="90" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ................................. </tspan><tspan class="value">Windows, Linux, Kali</tspan>
 <tspan x="450" y="110" class="cc">. </tspan><tspan class="key">Domain</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Astrophysics, QA, DS, WebDev, CyberSecur</tspan>
 <tspan x="450" y="130" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ................................................ </tspan><tspan class="value">N/A</tspan>
