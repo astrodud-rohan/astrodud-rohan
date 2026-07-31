@@ -18,10 +18,17 @@ def get_uptime():
     days = now.day - BIRTHDATE.day
     if days < 0:
         months -= 1
-        prev_month = now.month - 1 or 12
+        prev_month = now.month - 1 if now.month > 1 else 12
         prev_year = now.year if now.month > 1 else now.year - 1
-        days_in_prev_month = (datetime(now.year, now.month, 1) - datetime(prev_year, prev_month, 1)).days
-        days += days_in_prev_month
+        if prev_month in [1, 3, 5, 7, 8, 10, 12]:
+            days_in_prev = 31
+        elif prev_month in [4, 6, 9, 11]:
+            days_in_prev = 30
+        else:
+            days_in_prev = 29 if (prev_year % 4 == 0 and (prev_year % 100 != 0 or prev_year % 400 == 0)) else 28
+        
+        days += days_in_prev
+
     if months < 0:
         years -= 1
         months += 12
@@ -74,14 +81,21 @@ def get_stars_and_commits():
 
     return stars, commits, contributed
 
+TEMPLATES = [
+    ("profileLightMode.template.svg", "profileLightMode.svg"),
+    ("profileDarkMode.template.svg", "profileDarkMode.svg")
+]
 
 def render(values):
-    for path in SVG_FILES:
-        with open(path, "r") as f:
+    for src_path, dest_path in TEMPLATES:
+        with open(src_path, "r", encoding="utf-8") as f:
             content = f.read()
+
         for key, val in values.items():
-            content = re.sub(r"\{\{" + key + r"\}\}", str(val), content)
-        with open(path, "w") as f:
+            pattern = r"\{\{\s*" + re.escape(key) + r"\s*\}\}"
+            content = re.sub(pattern, str(val), content)
+
+        with open(dest_path, "w", encoding="utf-8") as f:
             f.write(content)
 
 
