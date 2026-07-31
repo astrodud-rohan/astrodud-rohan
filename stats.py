@@ -1,6 +1,7 @@
 import os
 import re
 import requests
+import time
 from datetime import datetime
 
 USERNAME = "astrodud-rohan"
@@ -86,6 +87,18 @@ TEMPLATES = [
     ("profileDarkMode.template.svg", "profileDarkMode.svg")
 ]
 
+def update_readme_cache_buster():
+    with open("README.md", "r", encoding="utf-8") as f:
+        content = f.read()
+    
+    # Appends/updates epoch timestamp on SVG URLs to bust GitHub Camo CDN cache
+    timestamp = int(time.time())
+    content = re.sub(r'profileLightMode\.svg(\?v=\d+)?', f'profileLightMode.svg?v={timestamp}', content)
+    content = re.sub(r'profileDarkMode\.svg(\?v=\d+)?', f'profileDarkMode.svg?v={timestamp}', content)
+    
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(content)
+
 def render(values):
     for src_path, dest_path in TEMPLATES:
         with open(src_path, "r", encoding="utf-8") as f:
@@ -112,3 +125,4 @@ if __name__ == "__main__":
         "FOLLOWERS": f"{followers:,}",
     }
     render(values)
+    update_readme_cache_buster()
