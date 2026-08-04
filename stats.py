@@ -111,12 +111,40 @@ def render(values):
         with open(dest_path, "w", encoding="utf-8") as f:
             f.write(content)
 
+TOTAL_LINE_WIDTH = 56
+
+def generate_dots(label: str, value: str, total_width: int = TOTAL_LINE_WIDTH) -> str:
+    val_str = str(value)
+    needed_dots = total_width - len(label) - len(val_str)
+    return "." * max(needed_dots, 1)
 
 if __name__ == "__main__":
     repos_count, followers = get_user_stats()
     stars, commits, contributed = get_stars_and_commits()
 
-    values = {
+    profile_data = {
+        # Static Fields
+        "USER": "Rohan Mukherjee",
+        "OS": "Linux, Windows, WSL",
+        "DOMAIN": "Quantitative Finance, Astrophysics, Cosmology",
+        "HOST": "TBU",
+        "LANG_PROG": "Python, C++, C, Java, R, SQL",
+        "LANG_MARKUP": "HTML, LaTeX, Markdown, YAML, JSON",
+        "LANG_SPOKEN": "English, Hindi, Bengali, Assamese",
+        "PROJ_DOMAIN": "Astrophysics, Quant-Finance, ML, DS",
+        "PROJ_NUM": "13",
+        "PROJ_TOOLS": "TBU",
+        "EXP_RESEARCH": "3 years, 10 months",
+        "EXP_HOSTS": "NASA, Caltech, Perimeter, TIFR, IIA",
+        "EXP_WORK": "5 years, 7 months",
+        "WORK_HOSTS": "Galileo Multiverse, CENTA, NoBroker",
+        "EMAIL_PERSONAL": "rohanmukherjeemails@gmail.com",
+        "EMAIL_WORK": "TBU",
+        "LINKEDIN": "@rohanmukherjeee",
+        "MEDIUM": "@astrodud",
+        "TWITTER": "@theastrodud",
+
+        # Dynamic Fields
         "UPTIME": get_uptime(),
         "REPOS": repos_count,
         "CONTRIBUTED": contributed,
@@ -124,5 +152,49 @@ if __name__ == "__main__":
         "STARS": f"{stars:,}",
         "FOLLOWERS": f"{followers:,}",
     }
+
+    # Map labels to keys for dot calculation: (Template Tag, Label Text, Value Key)
+    label_mappings = [
+        ("USER", "User:", "USER"),
+        ("UPTIME", "Uptime:", "UPTIME"),
+        ("OS", "OS:", "OS"),
+        ("DOMAIN", "Domain:", "DOMAIN"),
+        ("HOST", "Host:", "HOST"),
+        ("LANG_PROG", "Languages.Programming:", "LANG_PROG"),
+        ("LANG_MARKUP", "Languages.Markup:", "LANG_MARKUP"),
+        ("LANG_SPOKEN", "Languages.Spoken:", "LANG_SPOKEN"),
+        ("PROJ_DOMAIN", "Projects.Domain:", "PROJ_DOMAIN"),
+        ("PROJ_NUM", "Projects.Number:", "PROJ_NUM"),
+        ("PROJ_TOOLS", "Projects.Tools:", "PROJ_TOOLS"),
+        ("EXP_RESEARCH", "Experience.Research:", "EXP_RESEARCH"),
+        ("EXP_HOSTS", "Experience.Hosts:", "EXP_HOSTS"),
+        ("EXP_WORK", "Experience.Work:", "EXP_WORK"),
+        ("WORK_HOSTS", "Work.Hosts:", "WORK_HOSTS"),
+        ("EMAIL_PERSONAL", "Email.Personal:", "EMAIL_PERSONAL"),
+        ("EMAIL_WORK", "Email.Work:", "EMAIL_WORK"),
+        ("LINKEDIN", "LinkedIn:", "LINKEDIN"),
+        ("MEDIUM", "Medium:", "MEDIUM"),
+        ("TWITTER", "Twitter:", "TWITTER"),
+    ]
+
+    values = {}
+
+    for tag, label, val_key in label_mappings:
+        val_str = str(profile_data[val_key])
+        values[tag] = val_str
+        values[f"{tag}_DOTS"] = generate_dots(label, val_str)
+
+    values["REPOS"] = str(profile_data["REPOS"])
+    values["CONTRIBUTED"] = str(profile_data["CONTRIBUTED"])
+    values["COMMITS"] = str(profile_data["COMMITS"])
+    values["STARS"] = str(profile_data["STARS"])
+    values["FOLLOWERS"] = str(profile_data["FOLLOWERS"])
+
+    # Calculate Dots for GitHub Stats Sub-Columns
+    values["COMMITS_DOTS"] = generate_dots("Commits:", profile_data["COMMITS"], total_width=29)
+    values["STARS_DOTS"] = generate_dots("Stars:", profile_data["STARS"], total_width=22)
+    values["REPOS_DOTS"] = generate_dots("Repos:", profile_data["REPOS"], total_width=12)
+    values["FOLLOWERS_DOTS"] = generate_dots("Followers:", profile_data["FOLLOWERS"], total_width=22)
+
     render(values)
     update_readme_cache_buster()

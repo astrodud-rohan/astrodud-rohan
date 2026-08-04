@@ -52,32 +52,32 @@ text, tspan {white-space: pre;}
 </text>
 <text x="450" y="30" fill="#c9d1d9">
 <tspan x="450" y="30">astrodud-rohan</tspan> -———————————————————————————————————————————-
-<tspan x="450" y="50" class="cc">. </tspan><tspan class="key">User</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">Rohan Mukherjee</tspan>
-<tspan x="450" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ...................... </tspan><tspan class="value" id="age_data">{{UPTIME}}</tspan>
-<tspan x="450" y="90" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ................................. </tspan><tspan class="value">Windows, Linux, Kali</tspan>
-<tspan x="450" y="110" class="cc">. </tspan><tspan class="key">Domain</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">Astrophysics, Cosmology, QuantFinance</tspan>
-<tspan x="450" y="130" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ................................................ </tspan><tspan class="value">N/A</tspan>
+<tspan x="450" y="50" class="cc">. </tspan><tspan class="key">User:</tspan><tspan class="cc"> {{USER_DOTS}} </tspan><tspan class="value">{{USER}}</tspan>
+<tspan x="450" y="70" class="cc">. </tspan><tspan class="key">Uptime:</tspan><tspan class="cc" id="age_data_dots"> {{UPTIME_DOTS}} </tspan><tspan class="value" id="age_data">{{UPTIME}}</tspan>
+<tspan x="450" y="90" class="cc">. </tspan><tspan class="key">OS:</tspan><tspan class="cc"> {{OS_DOTS}} </tspan><tspan class="value">{{OS}}</tspan>
+<tspan x="450" y="110" class="cc">. </tspan><tspan class="key">Domain:</tspan><tspan class="cc"> {{DOMAIN_DOTS}} </tspan><tspan class="value">{{DOMAIN}}</tspan>
+<tspan x="450" y="130" class="cc">. </tspan><tspan class="key">Host:</tspan><tspan class="cc"> {{HOST_DOTS}} </tspan><tspan class="value">{{HOST}}</tspan>
 <tspan x="450" y="150" class="cc">_ </tspan>
-<tspan x="450" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">Python, C, C++, R</tspan>
-<tspan x="450" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Markup</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">HTML, LaTeX, YAML</tspan>
-<tspan x="450" y="210" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Spoken</tspan>:<tspan class="cc"> ......................... </tspan><tspan class="value">English, Hindi</tspan>
+<tspan x="450" y="170" class="cc">. </tspan><tspan class="key">Languages.Programming:</tspan><tspan class="cc"> {{LANG_PROG_DOTS}} </tspan><tspan class="value">{{LANG_PROG}}</tspan>
+<tspan x="450" y="190" class="cc">. </tspan><tspan class="key">Languages.Markup:</tspan><tspan class="cc"> {{LANG_MARKUP_DOTS}} </tspan><tspan class="value">{{LANG_MARKUP}}</tspan>
+<tspan x="450" y="210" class="cc">. </tspan><tspan class="key">Languages.Spoken:</tspan><tspan class="cc"> {{LANG_SPOKEN_DOTS}} </tspan><tspan class="value">{{LANG_SPOKEN}}</tspan>
 <tspan x="450" y="230" class="cc">_ </tspan>
-<tspan x="450" y="250" class="cc">. </tspan><tspan class="key">Projects</tspan>.<tspan class="key">Domain</tspan>:<tspan class="cc"> ........................... </tspan><tspan class="value">To be updated</tspan>
-<tspan x="450" y="270" class="cc">. </tspan><tspan class="key">Projects</tspan>.<tspan class="key">Num</tspan>:<tspan class="cc"> .............................. </tspan><tspan class="value">To be updated</tspan>
-<tspan x="450" y="290" class="cc">. </tspan><tspan class="key">Projects</tspan>.<tspan class="key">Tools</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">To be updated</tspan>
+<tspan x="450" y="250" class="cc">. </tspan><tspan class="key">Projects.Domain:</tspan><tspan class="cc"> {{PROJ_DOMAIN_DOTS}} </tspan><tspan class="value">{{PROJ_DOMAIN}}</tspan>
+<tspan x="450" y="270" class="cc">. </tspan><tspan class="key">Projects.Number:</tspan><tspan class="cc"> {{PROJ_NUM_DOTS}} </tspan><tspan class="value">{{PROJ_NUM}}</tspan>
+<tspan x="450" y="290" class="cc">. </tspan><tspan class="key">Projects.Tools:</tspan><tspan class="cc"> {{PROJ_TOOLS_DOTS}} </tspan><tspan class="value">{{PROJ_TOOLS}}</tspan>
 <tspan x="450" y="310" class="cc">_ </tspan>
-<tspan x="450" y="330" class="cc">. </tspan><tspan class="key">Experience</tspan>.<tspan class="key">Research</tspan>:<tspan class="cc"> .................. </tspan><tspan class="value">3 years, 10 months</tspan>
-<tspan x="450" y="350" class="cc">. </tspan><tspan class="key">Experience</tspan>.<tspan class="key">Hosts</tspan>:<tspan class="cc"> .......... </tspan><tspan class="value">NASA, Caltech, Perimeter, IIA</tspan>
-<tspan x="450" y="370" class="cc">. </tspan><tspan class="key">Experience</tspan>.<tspan class="key">Work</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">5 years, 7 months</tspan>
-<tspan x="450" y="390" class="cc">. </tspan><tspan class="key">Work</tspan>.<tspan class="key">Hosts</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">CENTA, NoBroker, BChain Dynamics</tspan>
+<tspan x="450" y="330" class="cc">. </tspan><tspan class="key">Experience.Research:</tspan><tspan class="cc"> {{EXP_RESEARCH_DOTS}} </tspan><tspan class="value">{{EXP_RESEARCH}}</tspan>
+<tspan x="450" y="350" class="cc">. </tspan><tspan class="key">Experience.Hosts:</tspan><tspan class="cc"> {{EXP_HOSTS_DOTS}} </tspan><tspan class="value">{{EXP_HOSTS}}</tspan>
+<tspan x="450" y="370" class="cc">. </tspan><tspan class="key">Experience.Work:</tspan><tspan class="cc"> {{EXP_WORK_DOTS}} </tspan><tspan class="value">{{EXP_WORK}}</tspan>
+<tspan x="450" y="390" class="cc">. </tspan><tspan class="key">Work.Hosts:</tspan><tspan class="cc"> {{WORK_HOSTS_DOTS}} </tspan><tspan class="value">{{WORK_HOSTS}}</tspan>
 <tspan x="450" y="430">- Contact</tspan> -——————————————————————————————————————————————-—-
-<tspan x="450" y="450" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Personal</tspan>:<tspan class="cc"> ............ </tspan><tspan class="value">rohanmukherjeemails@gmail.com</tspan>
-<tspan x="450" y="470" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">Work</tspan>:<tspan class="cc"> ................................ </tspan><tspan class="value">To be updated</tspan>
-<tspan x="450" y="490" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ............................... </tspan><tspan class="value">@rohanmukherjeee</tspan>
-<tspan x="450" y="510" class="cc">. </tspan><tspan class="key">Medium</tspan>:<tspan class="cc"> ........................................ </tspan><tspan class="value">@astrodud</tspan>
-<tspan x="450" y="530" class="cc">. </tspan><tspan class="key">Twitter</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">@theastrodud</tspan>
+<tspan x="450" y="450" class="cc">. </tspan><tspan class="key">Email.Personal:</tspan><tspan class="cc"> {{EMAIL_PERSONAL_DOTS}} </tspan><tspan class="value">{{EMAIL_PERSONAL}}</tspan>
+<tspan x="450" y="470" class="cc">. </tspan><tspan class="key">Email.Work:</tspan><tspan class="cc"> {{EMAIL_WORK_DOTS}} </tspan><tspan class="value">{{EMAIL_WORK}}</tspan>
+<tspan x="450" y="490" class="cc">. </tspan><tspan class="key">LinkedIn:</tspan><tspan class="cc"> {{LINKEDIN_DOTS}} </tspan><tspan class="value">{{LINKEDIN}}</tspan>
+<tspan x="450" y="510" class="cc">. </tspan><tspan class="key">Medium:</tspan><tspan class="cc"> {{MEDIUM_DOTS}} </tspan><tspan class="value">{{MEDIUM}}</tspan>
+<tspan x="450" y="530" class="cc">. </tspan><tspan class="key">Twitter:</tspan><tspan class="cc"> {{TWITTER_DOTS}} </tspan><tspan class="value">{{TWITTER}}</tspan>
 <tspan x="450" y="570">- GitHub Stats</tspan> -—————————————————————————————————————————-—-
-<tspan x="450" y="590" class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc" id="repo_data_dots"> .... </tspan><tspan class="value" id="repo_data">{{REPOS}}</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value" id="contrib_data">{{CONTRIBUTED}}</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc" id="star_data_dots"> ........... </tspan><tspan class="value" id="star_data">{{STARS}}</tspan>
-<tspan x="450" y="610" class="cc">. </tspan><tspan class="key">Commmits</tspan>:<tspan class="cc" id="commit_data_dots"> ................. </tspan><tspan class="value" id="commit_data">{{COMMITS}}</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc" id="follower_data_dots"> ....... </tspan><tspan class="value" id="follower_data">{{FOLLOWERS}}</tspan>
+<tspan x="450" y="590" class="cc">. </tspan><tspan class="key">Repos:</tspan><tspan class="cc" id="repo_data_dots"> {{REPOS_DOTS}} </tspan><tspan class="value" id="repo_data">{{REPOS}}</tspan> {<tspan class="key">Contributed:</tspan> <tspan class="value" id="contrib_data">{{CONTRIBUTED}}</tspan>} | <tspan class="key">Stars:</tspan><tspan class="cc" id="star_data_dots"> {{STARS_DOTS}} </tspan><tspan class="value" id="star_data">{{STARS}}</tspan>
+<tspan x="450" y="610" class="cc">. </tspan><tspan class="key">Commits:</tspan><tspan class="cc" id="commit_data_dots"> {{COMMITS_DOTS}} </tspan><tspan class="value" id="commit_data">{{COMMITS}}</tspan> | <tspan class="key">Followers:</tspan><tspan class="cc" id="follower_data_dots"> {{FOLLOWERS_DOTS}} </tspan><tspan class="value" id="follower_data">{{FOLLOWERS}}</tspan>
 </text>
 </svg>
