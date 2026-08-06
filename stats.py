@@ -47,15 +47,46 @@ def get_stars_and_commits():
     repos_url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&type=owner"
     stars = 0
     page = 1
+    all_repos = []
+    
     while True:
         r = requests.get(f"{repos_url}&page={page}", headers=HEADERS)
         r.raise_for_status()
         batch = r.json()
         if not batch:
             break
+        all_repos.extend(batch)
         stars += sum(repo["stargazers_count"] for repo in batch)
         page += 1
 
+    # --- Calculate Lines of Code (LOC) ---
+    total_additions = 0
+    total_deletions = 0
+
+    for repo in all_repos:
+        if repo["fork"]:
+            continue  # Skip forks to count only your own code
+            
+        repo_name = repo["name"]
+        stats_url = f"https://api.github.com/repos/{USERNAME}/{repo_name}/stats/contributors"
+        stats_res = requests.get(stats_url, headers=HEADERS)
+        
+        # GitHub's stats endpoint is asynchronous and returns 202 while building cache
+        if stats_res.status_code == 202:
+            time.sleep(1)
+            stats_res = requests.get(stats_url, headers=HEADERS)
+            
+        if stats_res.status_code == 200 and isinstance(stats_res.json(), list):
+            for contributor in stats_res.json():
+                if contributor.get("author", {}).get("login") == USERNAME:
+                    for week in contributor.get("weeks", []):
+                        total_additions += week.get("a", 0)
+                        total_deletions += week.get("d", 0)
+
+    # Calculate net lines of code added
+    loc = total_additions - total_deletions
+
+    # --- GraphQL Query for Commits & Contributed Repos ---
     query = """
     query($login: String!) {
       user(login: $login) {
@@ -80,7 +111,7 @@ def get_stars_and_commits():
               gdata["contributionsCollection"]["restrictedContributionsCount"]
     contributed = gdata["repositoriesContributedTo"]["totalCount"]
 
-    return stars, commits, contributed
+    return stars, commits, contributed, loc, total_additions, total_deletions
 
 TEMPLATES = [
     ("profileLightMode.template.svg", "profileLightMode.svg"),
@@ -120,7 +151,7 @@ def generate_dots(label: str, value: str, total_width: int = TOTAL_LINE_WIDTH) -
 
 if __name__ == "__main__":
     repos_count, followers = get_user_stats()
-    stars, commits, contributed = get_stars_and_commits()
+    stars, commits, contributed, loc, additions, deletions = get_stars_and_commits()
 
     profile_data = {
         # Static Fields
@@ -151,6 +182,9 @@ if __name__ == "__main__":
         "COMMITS": f"{commits:,}",
         "STARS": f"{stars:,}",
         "FOLLOWERS": f"{followers:,}",
+        "LOC": f"{loc:,}",
+        "ADDITIONS": f"+{additions:,}",
+        "DELETIONS": f"-{deletions:,}",
     }
 
     # Map labels to keys for dot calculation: (Template Tag, Label Text, Value Key)
@@ -189,12 +223,16 @@ if __name__ == "__main__":
     values["COMMITS"] = str(profile_data["COMMITS"])
     values["STARS"] = str(profile_data["STARS"])
     values["FOLLOWERS"] = str(profile_data["FOLLOWERS"])
+    values["LOC"] = str(profile_data["LOC"])
+    values["ADDITIONS"] = str(profile_data["ADDITIONS"])
+    values["DELETIONS"] = str(profile_data["DELETIONS"])
 
     # Calculate Dots for GitHub Stats Sub-Columns
     values["COMMITS_DOTS"] = generate_dots("Commits:", profile_data["COMMITS"], total_width=29)
     values["STARS_DOTS"] = generate_dots("Stars:", profile_data["STARS"], total_width=22)
     values["REPOS_DOTS"] = generate_dots("Repos:", profile_data["REPOS"], total_width=12)
     values["FOLLOWERS_DOTS"] = generate_dots("Followers:", profile_data["FOLLOWERS"], total_width=22)
+    values["LOC_DOTS"] = generate_dots("Lines.Of.Code:", profile_data["LOC"], total_width=30)
 
     render(values)
     update_readme_cache_buster()
