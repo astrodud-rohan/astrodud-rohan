@@ -1,6 +1,6 @@
 <a href="https://github.com/astrodud-rohan/astrodud-rohan">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="./profileLightMode.svg?v=1789266551">
-    <img alt="Rohan Mukherjee's GitHub Profile README" src="./profileDarkMode.svg?v=1789266551">
+    <source media="(prefers-color-scheme: light)" srcset="./profileLightMode.svg?v=1789353943">
+    <img alt="Rohan Mukherjee's GitHub Profile README" src="./profileDarkMode.svg?v=1789353943">
   </picture>
 </a>
